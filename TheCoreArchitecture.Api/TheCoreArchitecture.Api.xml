@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TheCoreArchitecture.Api</name>
+    </assembly>
+    <members>
+        <member name="T:TheCoreArchitecture.Api.Base.ApiBaseController">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
