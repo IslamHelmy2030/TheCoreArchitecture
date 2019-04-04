@@ -10,14 +10,32 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using TheCoreArchitecture.Common.APIUtilities;
+using TheCoreArchitecture.Common.Repository;
+using TheCoreArchitecture.Common.UnitOfWork;
 using TheCoreArchitecture.Data.Context;
+using TheCoreArchitecture.Data.Entities;
 using TheCoreArchitecture.Data.IdentityEntities;
 using TheCoreArchitecture.Data.InitialDataInitializer;
+using TheCoreArchitecture.Domain.Base;
 
 namespace TheCoreArchitecture.Api.Extensions
 {
     public static class ConfigureServiceExtensions
     {
+        public static IServiceCollection AddRegisterServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbServices(configuration);
+            services.AddSecurityServices(configuration);
+            services.AddCustomeSertvices();
+            services.AddApiDocumentationServices();
+            services.AddAutoMapper();
+            services.AddDomainSertvices();
+            services.AddUnitOfWorkSertvices();
+            services.AddRepositorySertvices();
+            return services;
+        }
+
         private static void AddDbServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<MyDbContext>(cfg =>
@@ -93,17 +111,32 @@ namespace TheCoreArchitecture.Api.Extensions
 
         private static void AddCustomeSertvices(this IServiceCollection services)
         {
-
+            services.AddTransient<IActionResultResponseHandler, ActionResultResponseHandler>();
+            services.AddTransient<IRepositoryActionResult, RepositoryActionResult>();
+            services.AddTransient<IRepositoryResult, RepositoryResult>();
         }
 
-        public static IServiceCollection AddRegisterServices(this IServiceCollection services, IConfiguration configuration)
+        private static void AddRepositorySertvices(this IServiceCollection services)
         {
-            services.AddDbServices(configuration);
-            services.AddSecurityServices(configuration);
-            services.AddCustomeSertvices();
-            services.AddApiDocumentationServices();
-            services.AddAutoMapper();
-            return services;
+            services.AddTransient<IRepository<Country>, Repository<Country>>();
+            services.AddTransient<IRepository<Area>, Repository<Area>>();
+            services.AddTransient<IRepository<City>, Repository<City>>();
+        }
+
+        private static void AddUnitOfWorkSertvices(this IServiceCollection services)
+        {
+            services.AddTransient<IUnitOfWork<Country>, UnitOfWork<Country>>();
+            services.AddTransient<IUnitOfWork<Area>, UnitOfWork<Area>>();
+            services.AddTransient<IUnitOfWork<City>, UnitOfWork<City>>();
+        }
+
+        private static void AddDomainSertvices(this IServiceCollection services)
+        {
+            services.AddTransient<IBusinessBaseParameter<Country>, BusinessBaseParameter<Country>>();
+
+            services.AddTransient<IBusinessBaseParameter<Area>, BusinessBaseParameter<Area>>();
+
+            services.AddTransient<IBusinessBaseParameter<City>, BusinessBaseParameter<City>>();
         }
     }
 }

@@ -19,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TheCoreArchitecture.Common\TheCoreArchitecture.Common.csproj" />
     <ProjectReference Include="..\TheCoreArchitecture.Data\TheCoreArchitecture.Data.csproj" />
+    <ProjectReference Include="..\TheCoreArchitecture.Domain\TheCoreArchitecture.Domain.csproj" />
   </ItemGroup>
 
 </Project>
