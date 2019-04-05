@@ -18,6 +18,8 @@ using TheCoreArchitecture.Data.Entities;
 using TheCoreArchitecture.Data.IdentityEntities;
 using TheCoreArchitecture.Data.InitialDataInitializer;
 using TheCoreArchitecture.Domain.Base;
+using TheCoreArchitecture.Domain.Business;
+using TheCoreArchitecture.Domain.IBusiness;
 
 namespace TheCoreArchitecture.Api.Extensions
 {
@@ -133,7 +135,7 @@ namespace TheCoreArchitecture.Api.Extensions
         private static void AddDomainSertvices(this IServiceCollection services)
         {
             services.AddTransient<IBusinessBaseParameter<Country>, BusinessBaseParameter<Country>>();
-
+            services.AddTransient<ICountryBusiness, CountryBusiness>();
             services.AddTransient<IBusinessBaseParameter<Area>, BusinessBaseParameter<Area>>();
 
             services.AddTransient<IBusinessBaseParameter<City>, BusinessBaseParameter<City>>();

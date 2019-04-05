@@ -30,16 +30,26 @@ namespace TheCoreArchitecture.Common.Repository
             return await DbSet.FirstOrDefaultAsync(predicate);
         }
 
-        public async Task<IList<T>> Find(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> FindQueryable(Expression<Func<T, bool>> predicate)
         {
-            return await DbSet.Where(predicate).ToListAsync();
+            return DbSet.Where(predicate);
         }
 
-        public async Task<IList<T>> Find(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
+        public async Task<IEnumerable<T>> Find(Expression<Func<T, bool>> predicate)
+        {
+            return await FindQueryable(predicate).ToListAsync();
+        }
+
+        public IQueryable<T> FindQueryable(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
         {
             var query = DbSet.OfType<T>();
             query = includes.Aggregate(query, (current, property) => current.Include(property));
-            return await query.Where(predicate).ToListAsync();
+            return query.Where(predicate);
+        }
+
+        public async Task<IEnumerable<T>> Find(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
+        {
+            return await FindQueryable(predicate,includes).ToListAsync();
         }
 
         public async Task<T> FirstOrDefault(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
@@ -48,12 +58,12 @@ namespace TheCoreArchitecture.Common.Repository
             return result.FirstOrDefault();
         }
 
-        public async Task<IList<T>> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
             return await DbSet.ToListAsync();
         }
 
-        public async Task<IList<T>> GetAll(params Expression<Func<T, object>>[] includes)
+        public async Task<IEnumerable<T>> GetAll(params Expression<Func<T, object>>[] includes)
         {
             return await Find(x => TrueExpression, includes);
         }

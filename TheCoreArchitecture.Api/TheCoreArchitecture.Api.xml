@@ -7,5 +7,31 @@
         <member name="T:TheCoreArchitecture.Api.Base.ApiBaseController">
             <inheritdoc />
         </member>
+        <member name="F:TheCoreArchitecture.Api.Base.ApiBaseController.ResponseHandler">
+            <summary>
+            Response Handler
+            </summary>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Base.ApiBaseController.#ctor(TheCoreArchitecture.Common.APIUtilities.IActionResultResponseHandler)">
+            <inheritdoc />
+        </member>
+        <member name="T:TheCoreArchitecture.Api.Controllers.CountryController">
+            <inheritdoc />
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.#ctor(TheCoreArchitecture.Common.APIUtilities.IActionResultResponseHandler,TheCoreArchitecture.Domain.IBusiness.ICountryBusiness)">
+            <inheritdoc />
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.GetAllCountries">
+            <summary>
+            Get All Countries
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.GetAllCountriesDetails">
+            <summary>
+            Get All Countries Details
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
