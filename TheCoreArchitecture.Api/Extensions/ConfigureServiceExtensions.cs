@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using AutoMapper;
 using TheCoreArchitecture.Common.APIUtilities;
 using TheCoreArchitecture.Common.Repository;
 using TheCoreArchitecture.Common.UnitOfWork;
@@ -18,8 +17,8 @@ using TheCoreArchitecture.Data.Entities;
 using TheCoreArchitecture.Data.IdentityEntities;
 using TheCoreArchitecture.Data.InitialDataInitializer;
 using TheCoreArchitecture.Domain.Business;
-using TheCoreArchitecture.Domain.Dto.Base;
 using TheCoreArchitecture.Domain.IBusiness;
+using TheCoreArchitecture.Service.Dto.Base;
 
 namespace TheCoreArchitecture.Api.Extensions
 {
@@ -38,7 +37,7 @@ namespace TheCoreArchitecture.Api.Extensions
         {
             services.AddDbServices(configuration);
             services.AddSecurityServices(configuration);
-            
+
             services.AddCustomSertvices();
             services.AddApiDocumentationServices();
             services.AddDomainSertvices();

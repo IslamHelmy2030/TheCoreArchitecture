@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using TheCoreArchitecture.Common.APIUtilities;
-using TheCoreArchitecture.Domain.Dto;
-using TheCoreArchitecture.Domain.Dto.Parameter;
+using TheCoreArchitecture.Service.Dto;
+using TheCoreArchitecture.Service.Dto.Parameter;
 
 namespace TheCoreArchitecture.Domain.IBusiness
 {

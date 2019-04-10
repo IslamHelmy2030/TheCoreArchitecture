@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using TheCoreArchitecture.Api.Base;
 using TheCoreArchitecture.Common.APIUtilities;
-using TheCoreArchitecture.Domain.Dto;
-using TheCoreArchitecture.Domain.Dto.Parameter;
 using TheCoreArchitecture.Domain.IBusiness;
+using TheCoreArchitecture.Service.Dto;
+using TheCoreArchitecture.Service.Dto.Parameter;
 
 namespace TheCoreArchitecture.Api.Controllers
 {

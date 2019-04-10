@@ -33,14 +33,14 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.AddCountry(TheCoreArchitecture.Domain.Dto.Parameter.CountryAddDto)">
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.AddCountry(TheCoreArchitecture.Service.Dto.Parameter.CountryAddDto)">
             <summary>
             Add Country
             </summary>
             <param name="country">New Country Name</param>
             <returns></returns>
         </member>
-        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.UpdateCountry(TheCoreArchitecture.Domain.Dto.CountryDto)">
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.UpdateCountry(TheCoreArchitecture.Service.Dto.CountryDto)">
             <summary>
             Add Country
             </summary>

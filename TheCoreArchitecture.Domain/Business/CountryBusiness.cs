@@ -6,9 +6,9 @@ using TheCoreArchitecture.Common.APIUtilities;
 using TheCoreArchitecture.Data.Entities;
 using TheCoreArchitecture.Domain.Base;
 using TheCoreArchitecture.Domain.IBusiness;
-using TheCoreArchitecture.Domain.Dto;
-using TheCoreArchitecture.Domain.Dto.Base;
-using TheCoreArchitecture.Domain.Dto.Parameter;
+using TheCoreArchitecture.Service.Dto;
+using TheCoreArchitecture.Service.Dto.Base;
+using TheCoreArchitecture.Service.Dto.Parameter;
 
 namespace TheCoreArchitecture.Domain.Business
 {

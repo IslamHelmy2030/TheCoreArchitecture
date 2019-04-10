@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <Compile Remove="Dto\**" />
+    <Compile Remove="Mapping\**" />
+    <EmbeddedResource Remove="Dto\**" />
+    <EmbeddedResource Remove="Mapping\**" />
+    <None Remove="Dto\**" />
+    <None Remove="Mapping\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TheCoreArchitecture.Common\TheCoreArchitecture.Common.csproj" />
-    <ProjectReference Include="..\TheCoreArchitecture.Data\TheCoreArchitecture.Data.csproj" />
+    <ProjectReference Include="..\TheCoreArchitecture.Service\TheCoreArchitecture.Service.csproj" />
   </ItemGroup>
 
 </Project>
