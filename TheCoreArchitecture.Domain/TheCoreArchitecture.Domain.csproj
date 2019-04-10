@@ -11,7 +11,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TheCoreArchitecture.Common\TheCoreArchitecture.Common.csproj" />
     <ProjectReference Include="..\TheCoreArchitecture.Data\TheCoreArchitecture.Data.csproj" />
-    <ProjectReference Include="..\TheCoreArchitecture.Service\TheCoreArchitecture.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 ﻿using TheCoreArchitecture.Data.Entities;
-using TheCoreArchitecture.Service.Dto;
-using TheCoreArchitecture.Service.Dto.Parameter;
+using TheCoreArchitecture.Domain.Dto;
+using TheCoreArchitecture.Domain.Dto.Parameter;
 
-namespace TheCoreArchitecture.Service.Mapping
+namespace TheCoreArchitecture.Domain.Mapping
 {
     public partial class AutoMapperProfile
     {

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using TheCoreArchitecture.Common.APIUtilities;
 using TheCoreArchitecture.Common.UnitOfWork;
+using TheCoreArchitecture.Domain.Dto.Base;
 
 namespace TheCoreArchitecture.Domain.Base
 {

@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using TheCoreArchitecture.Api.Base;
 using TheCoreArchitecture.Common.APIUtilities;
+using TheCoreArchitecture.Domain.Dto;
+using TheCoreArchitecture.Domain.Dto.Parameter;
 using TheCoreArchitecture.Domain.IBusiness;
 
 namespace TheCoreArchitecture.Api.Controllers
@@ -33,10 +35,36 @@ namespace TheCoreArchitecture.Api.Controllers
         /// Get All Countries Details
         /// </summary>
         /// <returns></returns>
-        [HttpGet(nameof(GetAllCountriesDetails))]
-        public async Task<IRepositoryResult> GetAllCountriesDetails()
+        [HttpGet(nameof(GetAllCountriesAreas))]
+        public async Task<IRepositoryResult> GetAllCountriesAreas()
         {
-            var repositoryResult = await _countryBusiness.GetAllCountriesDetails();
+            var repositoryResult = await _countryBusiness.GetAllCountriesAreas();
+            var result = ResponseHandler.GetResult(repositoryResult);
+            return result;
+        }
+
+        /// <summary>
+        /// Add Country
+        /// </summary>
+        /// <param name="country">New Country Name</param>
+        /// <returns></returns>
+        [HttpPost(nameof(AddCountry))]
+        public async Task<IRepositoryResult> AddCountry([FromBody]CountryAddDto country)
+        {
+            var repositoryResult = await _countryBusiness.AddCountry(country);
+            var result = ResponseHandler.GetResult(repositoryResult);
+            return result;
+        }
+
+        /// <summary>
+        /// Add Country
+        /// </summary>
+        /// <param name="country">New Country Name</param>
+        /// <returns></returns>
+        [HttpPut(nameof(UpdateCountry))]
+        public async Task<IRepositoryResult> UpdateCountry([FromBody]CountryDto country)
+        {
+            var repositoryResult = await _countryBusiness.UpdateCountry(country);
             var result = ResponseHandler.GetResult(repositoryResult);
             return result;
         }

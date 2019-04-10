@@ -2,7 +2,7 @@
 using TheCoreArchitecture.Common.APIUtilities;
 using TheCoreArchitecture.Common.UnitOfWork;
 
-namespace TheCoreArchitecture.Domain.Base
+namespace TheCoreArchitecture.Domain.Dto.Base
 {
     public interface IBusinessBaseParameter<T> where T : class
     {

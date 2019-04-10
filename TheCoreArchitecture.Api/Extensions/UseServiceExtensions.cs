@@ -3,8 +3,16 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace TheCoreArchitecture.Api.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class UseServiceExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         public static IApplicationBuilder UseRegisteredService(this IApplicationBuilder app)
         {
             app.UseCors(

@@ -27,11 +27,86 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.GetAllCountriesDetails">
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.GetAllCountriesAreas">
             <summary>
             Get All Countries Details
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.AddCountry(TheCoreArchitecture.Domain.Dto.Parameter.CountryAddDto)">
+            <summary>
+            Add Country
+            </summary>
+            <param name="country">New Country Name</param>
+            <returns></returns>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.CountryController.UpdateCountry(TheCoreArchitecture.Domain.Dto.CountryDto)">
+            <summary>
+            Add Country
+            </summary>
+            <param name="country">New Country Name</param>
+            <returns></returns>
+        </member>
+        <member name="T:TheCoreArchitecture.Api.Extensions.ConfigureServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Extensions.ConfigureServiceExtensions.AddRegisterServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TheCoreArchitecture.Api.Extensions.UseServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Extensions.UseServiceExtensions.UseRegisteredService(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TheCoreArchitecture.Api.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:TheCoreArchitecture.Api.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="dbContext"></param>
         </member>
     </members>
 </doc>

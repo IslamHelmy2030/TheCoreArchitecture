@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace TheCoreArchitecture.Service.Dto
+namespace TheCoreArchitecture.Domain.Dto
 {
-    public class CountryDetailsDto : CountryDto
+    public class CountryAreasDto : CountryDto
     {
         public List<AreaDto> AreaDtos { get; set; }
     }

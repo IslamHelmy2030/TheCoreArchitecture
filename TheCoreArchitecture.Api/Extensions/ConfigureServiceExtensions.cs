@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using AutoMapper;
 using TheCoreArchitecture.Common.APIUtilities;
 using TheCoreArchitecture.Common.Repository;
 using TheCoreArchitecture.Common.UnitOfWork;
@@ -17,21 +17,30 @@ using TheCoreArchitecture.Data.Context;
 using TheCoreArchitecture.Data.Entities;
 using TheCoreArchitecture.Data.IdentityEntities;
 using TheCoreArchitecture.Data.InitialDataInitializer;
-using TheCoreArchitecture.Domain.Base;
 using TheCoreArchitecture.Domain.Business;
+using TheCoreArchitecture.Domain.Dto.Base;
 using TheCoreArchitecture.Domain.IBusiness;
 
 namespace TheCoreArchitecture.Api.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class ConfigureServiceExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddRegisterServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbServices(configuration);
             services.AddSecurityServices(configuration);
-            services.AddCustomeSertvices();
+            
+            services.AddCustomSertvices();
             services.AddApiDocumentationServices();
-            services.AddAutoMapper();
             services.AddDomainSertvices();
             services.AddUnitOfWorkSertvices();
             services.AddRepositorySertvices();
@@ -111,7 +120,7 @@ namespace TheCoreArchitecture.Api.Extensions
             });
         }
 
-        private static void AddCustomeSertvices(this IServiceCollection services)
+        private static void AddCustomSertvices(this IServiceCollection services)
         {
             services.AddTransient<IActionResultResponseHandler, ActionResultResponseHandler>();
             services.AddTransient<IRepositoryActionResult, RepositoryActionResult>();

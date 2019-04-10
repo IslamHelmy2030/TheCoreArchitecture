@@ -1,6 +1,6 @@
-﻿using TheCoreArchitecture.Service.Dto.Parameter;
+﻿using TheCoreArchitecture.Domain.Dto.Parameter;
 
-namespace TheCoreArchitecture.Service.Dto
+namespace TheCoreArchitecture.Domain.Dto
 {
     public class CountryDto : CountryAddDto
     {
