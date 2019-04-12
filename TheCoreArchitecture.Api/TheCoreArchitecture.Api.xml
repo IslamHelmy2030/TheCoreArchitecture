@@ -12,8 +12,22 @@
             Response Handler
             </summary>
         </member>
+        <member name="F:TheCoreArchitecture.Api.Base.ApiBaseController.TokenBusiness">
+            <summary>
+            Token Business
+            </summary>
+        </member>
         <member name="M:TheCoreArchitecture.Api.Base.ApiBaseController.#ctor(TheCoreArchitecture.Common.APIUtilities.IActionResultResponseHandler)">
             <inheritdoc />
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Base.ApiBaseController.#ctor(TheCoreArchitecture.Common.APIUtilities.IActionResultResponseHandler,TheCoreArchitecture.Domain.ISecurity.ITokenBusiness)">
+            <inheritdoc />
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Base.ApiBaseController.GetUserData">
+            <summary>
+            Get User Data
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:TheCoreArchitecture.Api.Controllers.CountryController">
             <inheritdoc />
@@ -45,6 +59,26 @@
             Add Country
             </summary>
             <param name="country">New Country Name</param>
+            <returns></returns>
+        </member>
+        <member name="T:TheCoreArchitecture.Api.Controllers.Security.AccountController">
+            <inheritdoc />
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.Security.AccountController.#ctor(TheCoreArchitecture.Common.APIUtilities.IActionResultResponseHandler,TheCoreArchitecture.Domain.ISecurity.IAccountBusiness)">
+            <inheritdoc />
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.Security.AccountController.Login(TheCoreArchitecture.Service.SecurityDto.LoginParameter)">
+            <summary>
+            Login
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheCoreArchitecture.Api.Controllers.Security.AccountController.Register(TheCoreArchitecture.Service.SecurityDto.RegisterParameter)">
+            <summary>
+            Register New User
+            </summary>
+            <param name="parameter"></param>
             <returns></returns>
         </member>
         <member name="T:TheCoreArchitecture.Api.Extensions.ConfigureServiceExtensions">

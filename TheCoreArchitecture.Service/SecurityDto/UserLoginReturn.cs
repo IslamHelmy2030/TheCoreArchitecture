@@ -7,8 +7,6 @@ namespace TheCoreArchitecture.Service.SecurityDto
     {
         public string Token { get; set; }
         public DateTime TokenValidTo { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string UserId { get; set; }
+        public string FullName { get; set; }
     }
 }

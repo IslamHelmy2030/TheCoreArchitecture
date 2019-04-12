@@ -30,9 +30,7 @@ namespace TheCoreArchitecture.Domain.Security
         {
             var token = GetToken(user);
 
-            _userLoginReturn.FirstName = user.FirstName;
-            _userLoginReturn.LastName = user.LastName;
-            _userLoginReturn.UserId = user.Id;
+            _userLoginReturn.FullName = $"{user.FirstName} {user.LastName}";
 
             _userLoginReturn.TokenValidTo = token.ValidTo;
             _userLoginReturn.Token = new JwtSecurityTokenHandler().WriteToken(token);

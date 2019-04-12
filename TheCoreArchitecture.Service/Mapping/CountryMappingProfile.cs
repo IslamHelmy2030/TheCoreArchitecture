@@ -16,7 +16,7 @@ namespace TheCoreArchitecture.Service.Mapping
             CreateMap<Country, CountryAreasDto>()
                 .ForMember(dest => dest.CountryId, option => option.MapFrom(src => src.Id))
                 .ForMember(dest => dest.CountryName, option => option.MapFrom(src => src.Name))
-                .ForMember(dest => dest.AreaDtos, option => option.MapFrom(src => src.Areas))
+                .ForMember(dest => dest.Areas, option => option.MapFrom(src => src.Areas))
                 .ReverseMap();
 
             CreateMap<CountryAddDto, Country>()

@@ -18,7 +18,10 @@ using TheCoreArchitecture.Data.IdentityEntities;
 using TheCoreArchitecture.Data.InitialDataInitializer;
 using TheCoreArchitecture.Domain.Business;
 using TheCoreArchitecture.Domain.IBusiness;
+using TheCoreArchitecture.Domain.ISecurity;
+using TheCoreArchitecture.Domain.Security;
 using TheCoreArchitecture.Service.Dto.Base;
+using TheCoreArchitecture.Service.SecurityDto;
 
 namespace TheCoreArchitecture.Api.Extensions
 {
@@ -124,6 +127,8 @@ namespace TheCoreArchitecture.Api.Extensions
             services.AddTransient<IActionResultResponseHandler, ActionResultResponseHandler>();
             services.AddTransient<IRepositoryActionResult, RepositoryActionResult>();
             services.AddTransient<IRepositoryResult, RepositoryResult>();
+            services.AddTransient<IUserLoginReturn, UserLoginReturn>();
+            services.AddTransient<IDecodingValidToken, DecodingValidToken>();
         }
 
         private static void AddRepositorySertvices(this IServiceCollection services)
@@ -142,10 +147,11 @@ namespace TheCoreArchitecture.Api.Extensions
 
         private static void AddDomainSertvices(this IServiceCollection services)
         {
+            services.AddTransient<IAccountBusiness, AccountBusiness>();
+            services.AddTransient<ITokenBusiness, TokenBusiness>();
             services.AddTransient<IBusinessBaseParameter<Country>, BusinessBaseParameter<Country>>();
             services.AddTransient<ICountryBusiness, CountryBusiness>();
             services.AddTransient<IBusinessBaseParameter<Area>, BusinessBaseParameter<Area>>();
-
             services.AddTransient<IBusinessBaseParameter<City>, BusinessBaseParameter<City>>();
         }
     }
